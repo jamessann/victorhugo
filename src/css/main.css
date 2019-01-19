@@ -1,0 +1,354 @@
+/*
+  You can use import statements to include partials:
+ */
+@import 'imports/reset.css';
+
+/*
+  Or add your statements here:
+ */
+
+/* Declare CSS Variables */
+
+:root {
+  --dark-grey:        #4B5866;
+  --light-grey:       #A2A3A3;
+  --white-text:       #FFF;
+  --tangerine:          255, 89, 98;
+}
+
+body {
+  /* font-size: calc(10px + 1vmin); */
+  font-size: 16px;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1C1E1F;
+  color: var(--white-text);
+}
+
+a {
+  color: var(--white-text);
+  text-decoration: none;
+  border-bottom: 3px solid rgba(var(--tangerine), 0.75);
+  transition: border-bottom .15s ease-in;
+
+  &:hover {
+    border-bottom: 3px solid rgba(var(--tangerine), 1);
+  }
+}
+
+.content {
+  padding: 0 32px;
+}
+
+/** Homepage **/
+
+.home {
+
+  svg {
+    fill: var(--dark-grey);
+  }
+
+}
+
+
+.home-nav {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  font-family: 'IBM Plex Mono', Courier, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark-grey);
+
+  a {
+    color: var(--light-grey);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(var(--tangerine), 0);
+    padding-bottom: 3px;
+    transition: all .15s ease-in;
+  
+    &:hover {
+      color: var(--white-text);
+      border-bottom: 1px solid rgba(var(--tangerine), 1);
+    }
+
+    &.active {
+        color: var(--white-text);
+        border-bottom: 1px solid rgba(var(--tangerine), 1);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 40px 0 0 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-left: 54px;
+    }
+  }
+}
+
+.profile {
+  height: 100vh;
+
+  .photo {
+    width: 40%;
+    float: left;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    z-index: 1;
+    background: url("/img/profile-pic.jpg") no-repeat center center;
+    background-size: cover;
+  }
+
+  .blurb {
+    width: 60%;
+    float: left;
+    margin-left: 40%;
+    height: 100%;
+    padding: 40px 12% 40px 80px;
+
+    h1 {
+      font-size: 2.375rem; /* 38px */
+      font-weight: 600;
+      line-height: 1.368421052631579;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.444444444444;
+    }
+  }
+
+  .meta-content {
+    display: flex;
+  
+    .col {
+      flex: 50%;
+      margin-top: 2em;
+
+        &:first-child {
+          margin-right: 5%;
+      }
+    }
+
+    h2 {
+      font-family: 'IBM Plex Mono', Courier, monospace;
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--light-grey);
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.75em;
+      }
+    }
+  }
+}
+
+
+
+
+/** Blog **/
+.blog {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  background-color: var(--white-text);
+
+  .content {
+    padding: 0;
+  }
+
+  .read-more {
+    margin-bottom: 1em;
+    display: inline-block;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  aside {
+    width: 15%;
+    padding-top: 10.7em;
+
+    svg {
+      fill: rgba(var(--tangerine), 0.65);
+      transition: all .15s ease-in;
+
+      &:hover {
+        fill: rgba(var(--tangerine), 1);
+      }
+    }
+
+
+    .sidebar-sticky {
+      position: sticky;
+      top: 4em;
+      font-family: 'IBM Plex Mono', Courier, monospace;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--light-grey);
+
+      .js-mark {
+        display: block;
+        border-bottom: none;
+              
+        &:hover {
+          border-bottom: none;
+        }
+      }
+
+      a {
+        color: var(--light-grey);
+        text-decoration: none;
+        border-bottom: none;
+        transition: all .15s ease-in;
+      
+        &:hover {
+          color: rgba(var(--tangerine), 0.65);
+        }
+    
+        &.active {
+          color: rgba(var(--tangerine), 0.65);
+        }
+      }
+
+      ul {
+        margin: 2.8em 0 0 0;
+        padding: 0;
+      }
+
+      li {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 1.5em;
+      }
+    }
+
+  }
+
+  article {
+    width: 75%;
+    margin-top: 9.2em;
+    color: var(--dark-grey);
+
+    a {
+      color: var(--dark-grey);
+      text-decoration: none;
+      border-bottom: 3px solid rgba(var(--tangerine), 0.45);
+      padding-bottom: 0;
+      transition: all .15s ease-in;
+    
+      &:hover {
+        color: var(--dark-grey);
+        border-bottom: 3px solid rgba(var(--tangerine), 1);
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .list-title {
+      a {
+        border-bottom: none;
+        transition: none;
+
+        &:hover {
+          color: rgba(var(--tangerine), 1);
+          border-bottom: none;
+        }
+      }  
+    }
+
+    .post-date {
+      color: var(--light-grey);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      margin-top: -1.4em;
+    }
+
+    main {
+     margin-top: 1.6em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.416666666666667;
+      font-weight: 600;
+      color: var(--dark-grey);
+    }
+
+    h1 {
+      font-size: 2rem; /* 32px */
+      line-height: 1.375;
+    }
+
+    h2 {
+      font-size: 1.75rem; /* 28px */
+      line-height: 1.357142857142857;
+      margin-top: 1.5em;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-size: 1.5rem; /* 24px */
+      line-height: 1.416666666666667;
+      margin-top: 1.5em;
+      margin-bottom: 0;
+    }
+
+    h4 {
+      font-size: 1.375rem; /* 22px */
+      line-height: 1.454545454545455;
+      margin-top: 1.5em;
+      margin-bottom: 0;
+    }
+
+    h5 {
+      font-size: 1.25rem; /* 20px */
+      line-height: 1.5;
+      margin-top: 1.5em;
+      margin-bottom: 0;
+    }
+
+    h6 {
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.555555555555556;
+      margin-top: 1.5em;
+      margin-bottom: 0;
+    }
+
+    p {
+      color: var(--dark-grey);
+      line-height: 1.625;
+      margin-bottom: 1.625em;
+    }
+
+    a {
+      color: var(--dark-grey);
+    }
+  }
+
+}
+

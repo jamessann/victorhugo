@@ -1,0 +1,54 @@
+{{ define "main" }}
+<nav class="home-nav">
+  <ul>
+    <li><a href="#" class="active">Profile</a></li>
+    <li><a href="{{ "/work/" | relURL }}">Work</a></li>
+    <li><a href="{{ "/blog/" | relURL }}">Blog</a></li>
+  </ul>
+</nav>
+<section class="profile">
+  <div class="photo"></div>
+  <article class="blurb">
+    <svg width="32" height="37" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.764 12.397L16.81 6.74l-.097-.058c-.104-.053-6.277-.083-6.277-.083a.472.472 0 0 1-.46-.467v-2.02c0-.26.214-.472.474-.472h10.837c.263 0 .477.212.477.473v8.283zm9.507 10.897l-.08-.097a.697.697 0 0 0-.108-.18l-2.545-2.864-3.119-3.572V.71A.711.711 0 0 0 24.706 0H7.031a.711.711 0 0 0-.711.709v8.824c0 .391.32.71.711.71l7.883-.004c.082.017 6.85 7.703 6.85 7.703l-.003 4.174c-.555 2.914-3.094 5.028-6.038 5.028-2.729 0-5.16-1.848-5.911-4.494l-.013-.029a.716.716 0 0 0-.704-.602H6.864a.712.712 0 0 0-.714.709l.003.165a9.859 9.859 0 0 0 2.051 4.322 9.716 9.716 0 0 0 7.52 3.571c4.889 0 9.033-3.656 9.68-8.522h.015v-.136l1.956 2.241c-1.374 5.308-6.161 9.007-11.668 9.007-6.644 0-12.05-5.383-12.048-12.035l.001-.044-.003-.122-.002-1.203a.473.473 0 0 1 .466-.418h9.224c.256.001.47.21.473.465v3.274c0 .39.319.708.711.708h2.233a.711.711 0 0 0 .711-.708l.001-6.671c0-.391-.32-.71-.712-.71H.712a.712.712 0 0 0-.712.71v4.964l.005.118h.002a15.455 15.455 0 0 0 3.438 9.441 15.665 15.665 0 0 0 12.262 5.873c7.774 0 14.455-5.777 15.547-13.464l.005-.044a.637.637 0 0 0-.027-.199l.04-.017z" fill-rule="evenodd"/>
+    </svg>
+    <h1>James Sann is a multidisciplinary designer, currently specialising in Design Systems & Visual Design.</h1>
+    <p>Right now, I’m the <a href="http://www.myob.com">Principal Visual Designer at MYOB</a>, where I lead, mentor, define, and maintain the visual 
+      language for our products for over 40 designers across Australia and New Zealand.  I also champion and contribute to our design 
+      system Feelix — a set of components, patterns, guidance, and tools to help over 50 product teams build experiences 
+      for our customers.</p>
+    <p>I’m also a husband, father, and fan of a variety of cinema, television, music, art, design, and front-end. 
+      Oh, and it’s 2019 and it’s time to blog on my personal site again.</p>
+    <div class="meta-content">
+      <div class="col">
+          <h2>Select Projects</h2>
+          <ul>
+            <li><a href="#">MYOB Product Visual Design Language</a></li>
+            <li><a href="#">Feelix</a></li>
+            <li><a href="#">Nation Flags</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2>Latest Words</h2>
+          <ul>
+              <!-- Ranges through content/posts/*.md -->
+              {{ range .Pages }}
+                  <li>
+                      <a href="{{.Permalink}}">{{.Title}}</a>
+                  </li>
+              {{ end }}
+              </ul>
+        </div>
+      </div>
+  </article>
+    
+  
+</section>
+
+<!-- <h1>Hugo with Webpack, Sass, and PostCSS</h1>
+
+<h3>Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!</h3>
+
+<a href="{{ "/tech" | relURL }}">Check out the tech</a> -->
+
+{{ end }}

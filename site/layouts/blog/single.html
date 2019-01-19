@@ -1,0 +1,9 @@
+{{ define "main" }} {{ $section := .Site.GetPage "section" .Section }}
+<article class="content">
+    <header>
+        <h1>{{.Title}}</h1>
+        <div class="post-date">{{.Date.Format "02 Jan 2006"}}</div>
+    </header>
+  <main>{{- .Content -}}</main>
+</article>
+{{ end }}
